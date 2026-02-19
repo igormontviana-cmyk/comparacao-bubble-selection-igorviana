@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h> // Necessário para medir o tempo (clock)
+#include <time.h> // Biblioteca necessária para medir o tempo (clock)
 
-// Variáveis globais para facilitar a contagem dentro das funções void
+// Declaração das variáveis globais para facilitar a contagem dentro das funções void
 long long comparacoes = 0;
 long long movimentacoes = 0;
 
@@ -29,7 +29,7 @@ void selectionSort(int arr[], int n) {
         // Se encontrou um elemento menor que o atual, realiza a troca
         if (minIndex != i) {
             // Cada troca exige 3 atribuições na memória (temp, posição i, posição minIndex)
-            // Por isso, incrementamos 3 movimentações para representar o custo real
+            // Por isso, incrementei 3 movimentações para representar o custo real
             movimentacoes += 3; 
             
             temp = arr[minIndex];
@@ -54,7 +54,7 @@ void bubbleSort(int arr[], int n) {
             
             if(arr[j] > arr[j + 1]) {
                 // Realiza a troca (swap)
-                // Consideramos 3 movimentações pois há 3 escritas na memória
+                // Considerei 3 movimentações pois há 3 escritas na memória
                 movimentacoes += 3;
                 
                 temp = arr[j];
@@ -65,7 +65,7 @@ void bubbleSort(int arr[], int n) {
     }
 }
 
-// --- Funções Auxiliares ---
+// Funções Auxiliares
 
 // Preenche o vetor em ordem decrescente (Pior Caso para ordenação)
 void gerarVetorDecrescente(int arr[], int n) {
@@ -86,8 +86,7 @@ void copiarVetor(int origem[], int destino[], int n) {
 
 // Função principal de teste que gerencia memória e tempo
 void executarTeste(int n) {
-    // Alocação dinâmica (malloc) é necessária para vetores grandes (ex: 10000)
-    // para evitar estouro de pilha (stack overflow)
+    // Alocação dinâmica (malloc) é necessária para vetores grandes para evitar estouro de pilha (stack overflow)
     int *arrOriginal = (int*)malloc(n * sizeof(int));
     int *arrTeste = (int*)malloc(n * sizeof(int));
     
